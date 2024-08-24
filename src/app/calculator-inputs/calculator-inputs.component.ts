@@ -14,9 +14,11 @@ export class CalculatorInputsComponent {
 
   @Output() firstNumberEvent = new EventEmitter<number>();
   @Output() secondNumberEvent = new EventEmitter<number>();
+  @Output() operationEvent = new EventEmitter<string>();
 
-  emitValues() {
+  emitValues(operation: string) {
     this.firstNumberEvent.emit(this.firstNumber);
     this.secondNumberEvent.emit(this.secondNumber);
+    this.operationEvent.emit(operation);
   }
 }

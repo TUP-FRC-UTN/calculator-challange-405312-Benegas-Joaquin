@@ -10,20 +10,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ResultCalculatorComponent {
   @Input() firstNumber!: number;
   @Input() secondNumber!: number;
+  @Input() operation!: string;
 
   @Output() result = new EventEmitter<number>();
 
-  calculateResult(operation: string) {
+  ngOnChanges() {
+    this.calculateResult();
+  }
+
+  calculateResult() {
     let result: number = 0;
 
-    console.log({
-      firstNumber: this.firstNumber,
-      secondNumber: this.secondNumber,
-      operation: operation
-    });
-    
-
-    switch (operation) {
+    switch (this.operation) {
       case 'ADD':
         result = Number(this.firstNumber) + Number(this.secondNumber);
         break;

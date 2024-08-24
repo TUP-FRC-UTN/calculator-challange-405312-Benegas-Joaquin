@@ -21,6 +21,7 @@ export class AppComponent {
 
   firstNumber!: number;
   secondNumber!: number;
+  operation!: string;
   result!: number;
 
   onFirstNumberReceived(value: number) {
@@ -29,6 +30,10 @@ export class AppComponent {
 
   onSecondNumberReceived(value: number) {
     this.secondNumber = value;
+  }
+
+  onOperationReceived(operation: string) {
+    this.operation = operation;
   }
 
   onResultReceived(result: number) {
