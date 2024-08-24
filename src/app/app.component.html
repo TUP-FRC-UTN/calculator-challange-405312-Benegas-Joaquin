@@ -1,0 +1,14 @@
+<app-calculator-inputs
+  (firstNumberEvent)="onFirstNumberReceived($event)"
+  (secondNumberEvent)="onSecondNumberReceived($event)"
+>
+</app-calculator-inputs>
+
+<app-result-calculator
+  [firstNumber]="firstNumber"
+  [secondNumber]="secondNumber"
+  (result)="onResultReceived($event)"
+>
+</app-result-calculator>
+
+<app-result-display [result]="result"></app-result-display>
